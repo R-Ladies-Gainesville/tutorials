@@ -1,0 +1,149 @@
+---
+title: "Tutorial Title"
+author: "Author"  
+date: "`r Sys.Date()`"
+output: github_document
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+This is a template for tutorials, which are instructive documents that guide a learner through a skill using examples.
+
+Replace this text with a description of you tutorial. Include clear learning objectives. For example:
+
+Have you ever learned a skill in R and wanted to share it with others? In this tutorial, we'll walk through how to create tutorials so that you can easily share your skills!
+
+### Learning objectives
+- Become familiar with the tutorial template
+- Adapt the tutorial template to your needs
+- Create beautiful and clear tutorials for learneRs
+
+## R Markdown
+
+This template is written in an R Markdown document. This type of document is best opened and edited in RStudio. R Markdown documents allow you to include text (like this), code (see below), and output of code, like figures, in a single document. You can learn more  about R Markdown [here](https://rmarkdown.rstudio.com/lesson-1.html) (check out the Cheatsheet!).
+
+If you haven't already, replace the `Tutorial Title` and `Author` information in the metadata block at the top of this document with your information.
+
+This section is titled **R Markdown**, but your tutorial won't necessarily need this section. Consider the sections that you want in your tutorial and revise the headers throughout (the text that starts with ##) or create your own section headers.
+
+## Examples
+
+Examples are key to meeting your learning objectives. The learner needs to be able to reproduce examples from your tutorial on their computer. To do this, we look to advice on how to create a [minimal, reproducible example](https://stackoverflow.com/a/5963610). Examples may include:
+
+- Problem or goal
+- Necessary information (about your computing environment)
+- Minimal dataset
+- Minimal runnable code
+
+## Necessary information
+
+R and R packages are continuously updated and examples that work under a certain set of conditions may not work under another set. Ideally, you would update your tutorial when key software is updated to maintain working examples. However, that may not be feasible, and the next best option is to provide learners with all the necessary information about your computing environment. This can help them identify differences with their computing environment that may be preventing the example from running as expected.
+
+**My computing environment:**
+
+Session information
+```{r}
+sessionInfo()
+```
+
+RStudio version
+```{r}
+rstudioapi::versionInfo()$version
+```
+
+## Minimal dataset
+
+Almost all examples require an input. That is what is meant by "dataset". You can create your own dataset or use one that is built into R.
+
+**Create-your-own:**
+
+Known values
+```{r}
+x <- c(1, 5, 9, 10)
+```
+
+Random values (set seed to make it reproducible)
+```{r}
+set.seed(20)
+y <- rnorm(4)
+```
+See guidance on [minimal, reproducible example](https://stackoverflow.com/a/5963610) for more examples.
+
+**Built-in:**
+
+Available datasets in R (run in R to see list)
+```{r}
+data() 
+```
+
+A popular example dataset is 'iris'
+```{r}
+head(iris)
+```
+
+Another great example dataset is 'penguins'
+```{r}
+# install the package if it's not already installed
+if(!("palmerpenguins" %in% installed.packages()[,"Package"]))
+  install.packages("palmerpenguins")
+
+# load package
+library(palmerpenguins)
+
+# show data
+head(penguins)
+```
+
+
+## Minimal runnable code
+
+We will use an example from the [palmerpenguins vignette](https://allisonhorst.github.io/palmerpenguins/articles/intro.html) to demonstrate minimal runnable code. For this example, the goal is to create a scatterplot for data with different categories.
+
+**Install packages if they're not already installed** 
+
+This handy code is from [Stackoverflow](https://stackoverflow.com/a/4090208).
+```{r}
+list.of.packages <- c("palmerpenguins", "dplyr", "ggplot2")
+new.packages <- list.of.packages[!(list.of.packages %in% installed.packages()[,"Package"])]
+if(length(new.packages)) install.packages(new.packages)
+```
+
+**Load packages** 
+
+We use the code chunk option "message = F" to suppress messages generated when packages load.
+```{r, message = F}
+library(palmerpenguins)
+library(dplyr)
+library(ggplot2)
+```
+
+**Settings**
+
+Include figure settings, saved variables, and create-your-own datasets.
+```{r}
+theme_set(theme_minimal())
+```
+
+**Minimal code**
+
+Code to create scatterplot.
+```{r}
+ggplot(data = penguins, aes(x = flipper_length_mm, y = body_mass_g)) +
+  geom_point(aes(color = species,
+                 shape = species),
+             size = 2) +
+  scale_color_manual(values = c("darkorange","darkorchid","cyan4"))
+```
+
+If there are variations on your solution, provide more examples!
+
+## Publish your tutorial
+
+**Github**
+
+*Add Github instructions here*
