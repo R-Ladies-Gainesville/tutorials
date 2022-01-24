@@ -1,7 +1,7 @@
 Tutorial Title
 ================
 Author
-2022-01-12
+2022-01-23
 
 This is a template for tutorials, which are instructive documents that
 guide a learner through a skill using examples.
@@ -19,7 +19,22 @@ can easily share your skills!
 -   Adapt the tutorial template to your needs
 -   Create beautiful and clear tutorials for learneRs
 
-## R Markdown
+## Editing this template
+
+### Accessing the template
+
+If you do not use Github, go to the [tutorials repository home
+page](https://github.com/R-Ladies-Gainesville/tutorials), click `Code`,
+and click `Download ZIP`. Open the `tutorial_template.Rmd` file in
+RStudio.
+
+If you use Github,
+[clone](https://docs.github.com/en/get-started/using-git/getting-changes-from-a-remote-repository)
+the [tutorials
+repository](https://github.com/R-Ladies-Gainesville/tutorials) and edit
+the `tutorial_template.Rmd` file in RStudio.
+
+### R Markdown
 
 This template is written in an R Markdown document. This type of
 document is best opened and edited in RStudio. R Markdown documents
@@ -28,14 +43,19 @@ code, like figures, in a single document. You can learn more about R
 Markdown [here](https://rmarkdown.rstudio.com/lesson-1.html) (check out
 the Cheatsheet!).
 
+### Metadata
+
 If you haven’t already, replace the `Tutorial Title` and `Author`
 information in the metadata block at the top of this document with your
 information.
 
-This section is titled **R Markdown**, but your tutorial won’t
-necessarily need this section. Consider the sections that you want in
-your tutorial and revise the headers throughout (the text that starts
-with \#\#) or create your own section headers.
+### Section titles
+
+This section is titled **Editing this template** and the sub-section is
+titled **Section titles**, but your tutorial won’t necessarily need
+these sections. Consider the sections that you want in your tutorial and
+revise the headers throughout (the text that starts with \#\#) or create
+your own section headers.
 
 ## Examples
 
@@ -45,56 +65,11 @@ To do this, we look to advice on how to create a [minimal, reproducible
 example](https://stackoverflow.com/a/5963610). Examples may include:
 
 -   Problem or goal
--   Necessary information (about your computing environment)
--   Minimal dataset
--   Minimal runnable code
+-   Dataset
+-   Code
+-   Information for reproducibility
 
-## Necessary information
-
-R and R packages are continuously updated and examples that work under a
-certain set of conditions may not work under another set. Ideally, you
-would update your tutorial when key software is updated to maintain
-working examples. However, that may not be feasible, and the next best
-option is to provide learners with all the necessary information about
-your computing environment. This can help them identify differences with
-their computing environment that may be preventing the example from
-running as expected.
-
-**My computing environment:**
-
-Session information
-
-``` r
-sessionInfo()
-#> R version 4.1.1 (2021-08-10)
-#> Platform: x86_64-apple-darwin17.0 (64-bit)
-#> Running under: macOS Big Sur 10.16
-#> 
-#> Matrix products: default
-#> BLAS:   /Library/Frameworks/R.framework/Versions/4.1/Resources/lib/libRblas.0.dylib
-#> LAPACK: /Library/Frameworks/R.framework/Versions/4.1/Resources/lib/libRlapack.dylib
-#> 
-#> locale:
-#> [1] en_US.UTF-8/en_US.UTF-8/en_US.UTF-8/C/en_US.UTF-8/en_US.UTF-8
-#> 
-#> attached base packages:
-#> [1] stats     graphics  grDevices utils     datasets  methods   base     
-#> 
-#> loaded via a namespace (and not attached):
-#>  [1] compiler_4.1.1  magrittr_2.0.1  fastmap_1.1.0   tools_4.1.1    
-#>  [5] htmltools_0.5.2 yaml_2.2.1      stringi_1.7.6   rmarkdown_2.11 
-#>  [9] knitr_1.36      stringr_1.4.0   xfun_0.29       digest_0.6.29  
-#> [13] rlang_0.4.12    evaluate_0.14
-```
-
-RStudio version
-
-``` r
-rstudioapi::versionInfo()$version
-#> [1] '1.4.1717'
-```
-
-## Minimal dataset
+## Dataset
 
 Almost all examples require an input. That is what is meant by
 “dataset”. You can create your own dataset or use one that is built into
@@ -163,7 +138,7 @@ head(penguins)
 #> # … with 1 more variable: year <int>
 ```
 
-## Minimal runnable code
+## Code
 
 We will use an example from the [palmerpenguins
 vignette](https://allisonhorst.github.io/palmerpenguins/articles/intro.html)
@@ -213,12 +188,86 @@ ggplot(data = penguins, aes(x = flipper_length_mm, y = body_mass_g)) +
 #> Warning: Removed 2 rows containing missing values (geom_point).
 ```
 
-![](html_tutorial_files/figure-gfm/unnamed-chunk-11-1.png)<!-- -->
+![](tutorial_template_files/figure-gfm/unnamed-chunk-9-1.png)<!-- -->
 
 If there are variations on your solution, provide more examples!
 
-## Publish your tutorial
+## Information for reproducibility
 
-**Github**
+R and R packages are continuously updated and examples that work under a
+certain set of conditions may not work under another set. Ideally, you
+would update your tutorial when key software is updated to maintain
+working examples. However, that may not be feasible, and the next best
+option is to provide learners with all the necessary information about
+your computing environment. This can help them identify differences with
+their computing environment that may be preventing the example from
+running as expected.
 
-*Add Github instructions here*
+**My computing environment:**
+
+Session information
+
+``` r
+sessionInfo()
+#> R version 4.1.1 (2021-08-10)
+#> Platform: x86_64-apple-darwin17.0 (64-bit)
+#> Running under: macOS Big Sur 10.16
+#> 
+#> Matrix products: default
+#> BLAS:   /Library/Frameworks/R.framework/Versions/4.1/Resources/lib/libRblas.0.dylib
+#> LAPACK: /Library/Frameworks/R.framework/Versions/4.1/Resources/lib/libRlapack.dylib
+#> 
+#> locale:
+#> [1] en_US.UTF-8/en_US.UTF-8/en_US.UTF-8/C/en_US.UTF-8/en_US.UTF-8
+#> 
+#> attached base packages:
+#> [1] stats     graphics  grDevices utils     datasets  methods   base     
+#> 
+#> other attached packages:
+#> [1] ggplot2_3.3.5        dplyr_1.0.7          palmerpenguins_0.1.0
+#> 
+#> loaded via a namespace (and not attached):
+#>  [1] highr_0.9        pillar_1.6.4     compiler_4.1.1   tools_4.1.1     
+#>  [5] digest_0.6.29    evaluate_0.14    lifecycle_1.0.1  tibble_3.1.6    
+#>  [9] gtable_0.3.0     pkgconfig_2.0.3  rlang_0.4.12     cli_3.1.0       
+#> [13] DBI_1.1.1        rstudioapi_0.13  yaml_2.2.1       xfun_0.29       
+#> [17] fastmap_1.1.0    withr_2.4.3      stringr_1.4.0    knitr_1.36      
+#> [21] generics_0.1.1   vctrs_0.3.8      grid_4.1.1       tidyselect_1.1.1
+#> [25] glue_1.5.1       R6_2.5.1         fansi_0.5.0      rmarkdown_2.11  
+#> [29] farver_2.1.0     purrr_0.3.4      magrittr_2.0.1   scales_1.1.1    
+#> [33] ellipsis_0.3.2   htmltools_0.5.2  assertthat_0.2.1 colorspace_2.0-2
+#> [37] labeling_0.4.2   utf8_1.2.2       stringi_1.7.6    munsell_0.5.0   
+#> [41] crayon_1.4.2
+```
+
+RStudio version
+
+``` r
+rstudioapi::versionInfo()$version
+#> [1] '1.4.1717'
+```
+
+## Sharing your tutorial
+
+### Slides
+
+If you’re sharing your tutorial at an R-Ladies meeting, consider making
+slides to go along with it.
+
+See the \[presentations repository\] to download the the R Markdown file
+`tutorials_template.Rmd`. This presentation is created with the
+[xaringan](https://slides.yihui.org/xaringan/#1) package and the RLadies
+theme by [Alison
+Hill](https://www.apreshill.com/project/rladies-xaringan/) for more
+guidance.
+
+### Github
+
+Now it’s time to add your tutorial to the R-Ladies Gainesville
+[tutorials
+repository](https://github.com/R-Ladies-Gainesville/tutorials). This
+will make it easier for others to provide feedback and for people to use
+your tutorial!
+
+If you do not use Github, email your `.Rmd` file to R-Ladies Gainesville
+at <gainesville@rladies.org>
