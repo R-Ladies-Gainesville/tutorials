@@ -168,4 +168,4 @@ See the [presentations repository] to download the the R Markdown file `tutorial
 
 Now it's time to add your tutorial to the R-Ladies Gainesville [tutorials repository](https://github.com/R-Ladies-Gainesville/tutorials). This will make it easier for others to provide feedback and for people to use your tutorial!
 
-If you do not use Github, email your `.Rmd` file to R-Ladies Gainesville at <gainesville@rladies.org>
+If you do not use Github, email your `.Rmd` file to R-Ladies Gainesville at <gainesville@rladies.org>.
