@@ -1,7 +1,7 @@
 Tutorial Title
 ================
 Author
-2022-01-23
+2022-01-24
 
 This is a template for tutorials, which are instructive documents that
 guide a learner through a skill using examples.
@@ -13,7 +13,7 @@ Have you ever learned a skill in R and wanted to share it with others?
 In this tutorial, we’ll walk through how to create tutorials so that you
 can easily share your skills!
 
-### Learning objectives
+#### Learning objectives
 
 -   Become familiar with the tutorial template
 -   Adapt the tutorial template to your needs
@@ -21,7 +21,7 @@ can easily share your skills!
 
 ## Editing this template
 
-### Accessing the template
+#### Accessing the template
 
 If you do not use Github, go to the [tutorials repository home
 page](https://github.com/R-Ladies-Gainesville/tutorials), click `Code`,
@@ -34,7 +34,7 @@ the [tutorials
 repository](https://github.com/R-Ladies-Gainesville/tutorials) and edit
 the `tutorial_template.Rmd` file in RStudio.
 
-### R Markdown
+#### R Markdown
 
 This template is written in an R Markdown document. This type of
 document is best opened and edited in RStudio. R Markdown documents
@@ -43,13 +43,13 @@ code, like figures, in a single document. You can learn more about R
 Markdown [here](https://rmarkdown.rstudio.com/lesson-1.html) (check out
 the Cheatsheet!).
 
-### Metadata
+#### Metadata
 
 If you haven’t already, replace the `Tutorial Title` and `Author`
 information in the metadata block at the top of this document with your
 information.
 
-### Section titles
+#### Section titles
 
 This section is titled **Editing this template** and the sub-section is
 titled **Section titles**, but your tutorial won’t necessarily need
@@ -59,14 +59,18 @@ your own section headers.
 
 ## Examples
 
-Examples are key to meeting your learning objectives. The learner needs
-to be able to reproduce examples from your tutorial on their computer.
-To do this, we look to advice on how to create a [minimal, reproducible
+Examples are key to meeting your learning objectives. Consider your
+audience, learning objectives, and narrative when writing examples (see
+[The Carpentries Curriculum
+Development](https://carpentries.github.io/curriculum-development/) for
+tips). The learner needs to be able to reproduce examples from your
+tutorial on their computer. To do this, we look to advice on how to
+create a [minimal, reproducible
 example](https://stackoverflow.com/a/5963610). Examples may include:
 
 -   Problem or goal
 -   Dataset
--   Code
+-   Solution code
 -   Information for reproducibility
 
 ## Dataset
@@ -95,7 +99,7 @@ example](https://stackoverflow.com/a/5963610) for more examples.
 
 **Built-in:**
 
-Available datasets in R (run in R to see list)
+Available datasets in R (run in RStudio to see list)
 
 ``` r
 data() 
@@ -138,17 +142,18 @@ head(penguins)
 #> # … with 1 more variable: year <int>
 ```
 
-## Code
+## Solution code
 
 We will use an example from the [palmerpenguins
 vignette](https://allisonhorst.github.io/palmerpenguins/articles/intro.html)
-to demonstrate minimal runnable code. For this example, the goal is to
-create a scatterplot for data with different categories.
+to demonstrate solution code. For this example, the goal is to create a
+scatterplot for data with different categories.
 
 **Install packages if they’re not already installed**
 
 This handy code is from
-[Stackoverflow](https://stackoverflow.com/a/4090208).
+[Stackoverflow](https://stackoverflow.com/a/4090208). List the packages
+a learner would need for your tutorial in the first line.
 
 ``` r
 list.of.packages <- c("palmerpenguins", "dplyr", "ggplot2")
@@ -175,9 +180,10 @@ Include figure settings, saved variables, and create-your-own datasets.
 theme_set(theme_minimal())
 ```
 
-**Minimal code**
+**Solution**
 
-Code to create scatterplot.
+Code to create scatterplot. We use the option out.width to make the
+figure clearer and smaller.
 
 ``` r
 ggplot(data = penguins, aes(x = flipper_length_mm, y = body_mass_g)) +
@@ -188,7 +194,7 @@ ggplot(data = penguins, aes(x = flipper_length_mm, y = body_mass_g)) +
 #> Warning: Removed 2 rows containing missing values (geom_point).
 ```
 
-![](tutorial_template_files/figure-gfm/unnamed-chunk-9-1.png)<!-- -->
+<img src="tutorial_template_files/figure-gfm/unnamed-chunk-9-1.png" width="50%" />
 
 If there are variations on your solution, provide more examples!
 
@@ -254,12 +260,13 @@ rstudioapi::versionInfo()$version
 If you’re sharing your tutorial at an R-Ladies meeting, consider making
 slides to go along with it.
 
-See the \[presentations repository\] to download the the R Markdown file
-`tutorials_template.Rmd`. This presentation is created with the
+See the [R-Ladies Gainesville presentations
+repository](https://github.com/R-Ladies-Gainesville/presentations) to
+download the the R Markdown file `tutorial_template.Rmd`. The
+tutorial\_template presentation is created with the
 [xaringan](https://slides.yihui.org/xaringan/#1) package and the RLadies
 theme by [Alison
-Hill](https://www.apreshill.com/project/rladies-xaringan/) for more
-guidance.
+Hill](https://www.apreshill.com/project/rladies-xaringan/).
 
 ### Github
 
@@ -270,4 +277,4 @@ will make it easier for others to provide feedback and for people to use
 your tutorial!
 
 If you do not use Github, email your `.Rmd` file to R-Ladies Gainesville
-at <gainesville@rladies.org>
+at <gainesville@rladies.org>.
