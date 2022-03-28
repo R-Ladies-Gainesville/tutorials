@@ -1,0 +1,562 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{ifxetex,ifluatex}
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\hypersetup{
+  pdftitle={Getting Around GitHub},
+  pdfauthor={Michelle Slawinski},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
+\usepackage[margin=1in]{geometry}
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\ifluatex
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+
+\title{Getting Around GitHub}
+\author{Michelle Slawinski}
+\date{3/6/2022}
+
+\begin{document}
+\maketitle
+
+{
+\setcounter{tocdepth}{2}
+\tableofcontents
+}
+\hypertarget{welcome}{%
+\section{Welcome}\label{welcome}}
+
+Git.. GitHub.. What are they? Why do they matter? In this tutorial we
+will introduce you to them and provide you with the basics! This
+presentation is for individuals with limited knowledge on git and
+graphical user interfaces, although those with a robust background are
+more than welcome to drop some knowledge on us! From one novice git user
+to another, we will walk through it together.
+
+\hypertarget{learning-objectives}{%
+\section{Learning Objectives}\label{learning-objectives}}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Describe git and graphical user interfaces
+\item
+  Set up and connect git, GitHub and RStudio
+\item
+  Practice navigating how to fork, commit, and request a pull on Github
+\end{enumerate}
+
+\hypertarget{git}{%
+\section{Git}\label{git}}
+
+\hypertarget{what-is-git}{%
+\subsection{What is Git?}\label{what-is-git}}
+
+Have you ever tried working on a project or a specific piece of code
+with a colleague but could not figure out what changes they made? Or
+have you ever overwritten your own code and had to rewrite the chunk
+from the beginning?
+
+Frustrating, right? Well, git is a version control that allows you to do
+better. Be a better coder, communicator and person because the time you
+will save can then be spent elsewhere!
+
+\hypertarget{set-up}{%
+\subsection{Set Up}\label{set-up}}
+
+Let's get started shall we!
+
+First, check to see if you already have Git installed.
+
+On Windows, look for an application called ``Git Bash'' and on Macs,
+search for an application called ``Terminal.'' Type ``git version'' into
+the terminal. If you receive a version number, Git is installed.
+However, if the terminal is saying unknown command, then Git it not
+installed.
+
+No Git? No problem. Navigate to \href{https://git-scm.com/}{git} and
+click \emph{Downloads.} Select the software appropriate for your system
+and follow the remaining installation steps.
+
+\textbf{Windows}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Select \textbf{``Click here to download''} This should be the version
+  you need however, you can look below to see additional options.
+\item
+  Allow installer to download then open.
+\item
+  ``Do you want to allow this app to make changes to this device?'' Yes,
+  yes you do! You will need administrative access to your computer for
+  this.
+\item
+  Use the defaults throughout the installation process.
+\end{enumerate}
+
+\textbf{Mac}
+
+If you have Git installed, then we will most likely just need to update
+it. To update git follow this
+\href{https://modulesunraveled.com/installing-git/updating-git-if-you-have-only-version-comes-xcode-or-command-line-developer-tools}{video}!
+
+Otherwise, to install git:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Select \textbf{``Click here to download.''} This should be the version
+  you need however, you can look below to see additional options.
+\item
+  Click on the Binary installer link and select download.
+\item
+  Once it is downloaded, open the file, locate the package, right click
+  and select ``Open.''
+\item
+  Follow the prompts.
+\item
+  For help with the remaining installation process, follow this
+  \href{https://modulesunraveled.com/installing-git/installing-git-if-you-do-not-have-xcode-or-command-line-developer-tools-installed}{video}.
+\end{enumerate}
+
+\hypertarget{git-configuration-basics}{%
+\subsection{Git Configuration Basics}\label{git-configuration-basics}}
+
+When you configure git you will have options on what level you would
+like to make configurations.
+
+\begin{verbatim}
+ System Level: git config --system
+
+ User Level: git config --global
+
+ Project Level: git config
+\end{verbatim}
+
+Let's set up some basic git configurations for our system.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Username: When you set your user name using global, git will use this
+  information for anything you do.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    git config -\/-global user.name ``Michelle Slawinski''
+  \end{itemize}
+\item
+  Email: Do the same thing with your email address. This should be the
+  email you used to set up your GitHub account. If you have not signed
+  up for a GitHub account, do that now.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    git config -\/-global user.email ``my\_email.com''
+  \end{itemize}
+\item
+  Viewing git configurations: Type this command and scroll to the bottom
+  to see the configurations you set up.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    git config -\/-list
+  \end{itemize}
+\end{enumerate}
+
+For other configuration options see
+\href{https://git-scm.com/docs/git-config}{here}.
+
+\hypertarget{help-options}{%
+\subsection{Help Options}\label{help-options}}
+
+Are you stuck? Ask Git! In the terminal, type ``git help'' and it will
+return some common Git commands. If you want to learn more about a
+specific command such as branching, you can type ``git help branch'' and
+it will pull up a manual on branching.
+
+\begin{figure}
+\centering
+\includegraphics{git help branch.PNG}
+\caption{image}
+\end{figure}
+
+\hypertarget{git-resources}{%
+\subsection{Git Resources}\label{git-resources}}
+
+\begin{itemize}
+\tightlist
+\item
+  \href{https://git-scm.com/book/en/v2}{Pro Git Book}
+\item
+  \href{https://git-scm.com/docs}{Git Reference Guides}
+\item
+  \href{https://github.com/git-guides/install-git}{GitHub Git Guides}
+\item
+  \href{https://github.com/dictcp/awesome-git}{`Awesome Git' Repository}
+\item
+  \href{https://www.linkedin.com/learning-login/share?account=42166124\&forceAccount=false\&redirect=https\%3A\%2F\%2Fwww.linkedin.com\%2Flearning\%2Fgit-essential-training-the-basics\%3Ftrk\%3Dshare_ent_url\%26shareId\%3DSxKxywffQ8iDu\%252FzDfk84uw\%253D\%253D}{LinkedIn
+  Learning Git Essential Training: The Basics}
+\end{itemize}
+
+\hypertarget{graphical-user-interface}{%
+\section{Graphical User Interface}\label{graphical-user-interface}}
+
+\hypertarget{what-is-a-graphical-user-interface}{%
+\subsection{What is a Graphical User
+Interface?}\label{what-is-a-graphical-user-interface}}
+
+Git but better. Graphical User Interfaces (GUIs) are where you can use
+Git but in a more visually pleasing manner. Instead of using command
+lines in Git, you can use a click-based GUI. Think of it like using
+R/SAS versus SPSS or Jasp.
+
+\hypertarget{popular-guis}{%
+\subsection{Popular GUIs}\label{popular-guis}}
+
+\begin{longtable}[]{@{}ll@{}}
+\toprule
+Microsoft & Mac \\
+\midrule
+\endhead
+GitHub Desktop & GitHub Desktop \\
+GitKraken & GitKraken \\
+Sourcetree & Sourcetree \\
+TortoiseGit & Fork \\
+SmartGit & \\
+\bottomrule
+\end{longtable}
+
+\hypertarget{gui-resources}{%
+\subsection{GUI Resources}\label{gui-resources}}
+
+\begin{itemize}
+\tightlist
+\item
+  \href{https://git-scm.com/downloads/guis}{GUI Clients}
+\item
+  \href{https://docs.github.com/en}{GitHub Help}
+\item
+  \href{https://support.gitkraken.com/}{GitKraken Support}
+\item
+  \href{https://confluence.atlassian.com/get-started-with-sourcetree}{Sourcetree
+  Support}
+\end{itemize}
+
+\hypertarget{github}{%
+\section{GitHub}\label{github}}
+
+\hypertarget{what-is-github}{%
+\subsection{What is GitHub?}\label{what-is-github}}
+
+GitHub makes it easier on us as human beings! GitHub is a cloud based
+management tool for your code. Think of it like Google Docs' tracked
+changes feature. In any document, you can use tracked changes to
+\emph{visualize} the changes you or someone else are making. In GitHub,
+we are using a similar way to visualize version control. This is
+extremely important when you start working in teams or on a large
+project. You will want to have changes to your code saved so that you
+can refer back if you need to.
+
+\hypertarget{setup}{%
+\subsection{Setup}\label{setup}}
+
+Navigate \href{https://desktop.github.com}{here} to download GitHub
+Desktop and follow prompts.
+
+Note: You will want to create an account and hold on to the email you
+use for this account.
+
+\hypertarget{lets-practice}{%
+\subsection{Let's Practice}\label{lets-practice}}
+
+Now that you have an understanding of Git and GUIs such as GitHub, let's
+practice!
+
+We will be practicing how to fork a repository from GitHub, make a
+change locally, then commit those changes and push them back to GitHub.
+Ready? Lets get our feet wet.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Navigate to \href{https://github.com/R-Ladies-Gainesville}{RLadies of
+  Gainesville's GitHub}
+\item
+  Locate and click on the ``practice'' repository
+\item
+  In the upper right hand corner, click ``Fork'' Once you have it
+  forked, you will see that it is in your remote GitHub. Now that you
+  have it remotely, we will want to get access to it locally so that we
+  can add to the repository.
+\item
+  Click into the `practice' repository if you are not already in it and
+  click on the 'Code" drop down.
+\item
+  Select Open with GitHub Desktop. Once you click this, GitHub Desktop
+  should open with a screen asking you where you would like to place the
+  repository on your desktop. Go ahead and find where you would like to
+  put the repository.
+\end{enumerate}
+
+\hypertarget{rstudio}{%
+\section{RStudio}\label{rstudio}}
+
+\hypertarget{setup-1}{%
+\subsection{Setup}\label{setup-1}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(usethis)}
+\end{Highlighting}
+\end{Shaded}
+
+You should have the latest version of R and Rstudio downloaded. To check
+your current version of R:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{R.version.string}
+\CommentTok{\#\textgreater{} [1] "R version 4.0.5 (2021{-}03{-}31)"}
+\end{Highlighting}
+\end{Shaded}
+
+You will also want to have git installed at this point. To introduce
+yourself to git using RStudio:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{use\_git\_config}\NormalTok{(}\AttributeTok{user.name =} \StringTok{"Michelle Slawinski"}\NormalTok{, }\AttributeTok{user.email =} \StringTok{"slawinsm@gmail.com"}\NormalTok{) }
+  \CommentTok{\#use.email should be the same as your GitHub account}
+\end{Highlighting}
+\end{Shaded}
+
+To configure GitHub with RStudio, you will need to set up a token in
+RStudio. This is basically a secure connection between GitHub and
+RStudio:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{usethis}\SpecialCharTok{::}\FunctionTok{create\_github\_token}\NormalTok{()}
+\CommentTok{\#\textgreater{} * Call \textasciigrave{}gitcreds::gitcreds\_set()\textasciigrave{} to register this token in the local Git credential store}
+\CommentTok{\#\textgreater{}   It is also a great idea to store this token in any password{-}management software that you use}
+\CommentTok{\#\textgreater{} * Open URL \textquotesingle{}https://github.com/settings/tokens/new?scopes=repo,user,gist,workflow\&description=DESCRIBE THE TOKEN\textbackslash{}\textquotesingle{}S USE CASE\textquotesingle{}}
+\NormalTok{gitcreds}\SpecialCharTok{::}\NormalTok{gitcreds\_set}
+\CommentTok{\#\textgreater{} function (url = "https://github.com") }
+\CommentTok{\#\textgreater{} \{}
+\CommentTok{\#\textgreater{}     if (!is\_interactive()) \{}
+\CommentTok{\#\textgreater{}         throw(new\_error("gitcreds\_not\_interactive\_error", message = "\textasciigrave{}gitcreds\_set()\textasciigrave{} only works in interactive sessions"))}
+\CommentTok{\#\textgreater{}     \}}
+\CommentTok{\#\textgreater{}     stopifnot(is\_string(url), has\_no\_newline(url))}
+\CommentTok{\#\textgreater{}     check\_for\_git()}
+\CommentTok{\#\textgreater{}     current \textless{}{-} tryCatch(gitcreds\_get(url, use\_cache = FALSE, }
+\CommentTok{\#\textgreater{}         set\_cache = FALSE), gitcreds\_no\_credentials = function(e) NULL)}
+\CommentTok{\#\textgreater{}     if (!is.null(current)) \{}
+\CommentTok{\#\textgreater{}         gitcreds\_set\_replace(url, current)}
+\CommentTok{\#\textgreater{}     \}}
+\CommentTok{\#\textgreater{}     else \{}
+\CommentTok{\#\textgreater{}         gitcreds\_set\_new(url)}
+\CommentTok{\#\textgreater{}     \}}
+\CommentTok{\#\textgreater{}     msg("{-}\textgreater{} Removing credetials from cache...")}
+\CommentTok{\#\textgreater{}     gitcreds\_delete\_cache(gitcreds\_cache\_envvar(url))}
+\CommentTok{\#\textgreater{}     msg("{-}\textgreater{} Done.")}
+\CommentTok{\#\textgreater{}     invisible()}
+\CommentTok{\#\textgreater{} \}}
+\CommentTok{\#\textgreater{} \textless{}bytecode: 0x0000000013d2aa10\textgreater{}}
+\CommentTok{\#\textgreater{} \textless{}environment: 0x00000000131fa7e0\textgreater{}}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{rstudio-resources}{%
+\subsection{RStudio Resources}\label{rstudio-resources}}
+
+\begin{itemize}
+\tightlist
+\item
+  \href{https://r-bio.github.io/intro-git-rstudio/}{An Introduction to
+  Git and how to use it with RStudio}
+\item
+  \href{https://resources.github.com/whitepapers/github-and-rstudio/}{GitHub
+  and RStudio}
+\item
+  \href{https://happygitwithr.com/connect-intro.html}{Happy Git and
+  GitHub for the useR}
+\end{itemize}
+
+\hypertarget{last-minute-things}{%
+\section{Last Minute Things}\label{last-minute-things}}
+
+\hypertarget{dictionary}{%
+\subsection{Dictionary}\label{dictionary}}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.47}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.53}}@{}}
+\toprule
+Term & Definition \\
+\midrule
+\endhead
+Shell & A terminal that uses written commands to interact with your
+operating system \\
+Git Directory & Umbrella terms for all of your files and folders \\
+Modify & Changed the file but have not committed it to your local
+system \\
+Staged/Indexed & Marked a modified file to go into your next commit
+snapshot \\
+Commit & Save the state of your project in your local system \\
+Branch & When you duplicate part of a repository \\
+Merge & After you finish updating the code you branched, you can merge
+it back into the project's main source code \\
+Push & Once you commit your project or file to your local system, you
+have the option to push it to remote GitHub \\
+Pull & If your repository has new changes in GitHub, you can download
+and integrate those remote changes by using `pull' \\
+Fetch & To see if there are remote changes, you can use fetch to see
+what was updated. Fetch will not merge your updates though \\
+\bottomrule
+\end{longtable}
+
+\hypertarget{tips}{%
+\subsection{Tips}\label{tips}}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Update some basic profile features GitHub offers like a picture,
+  occupation, or location! Click your picture in the top right corner
+  after logging in and select `Settings.'
+\item
+  You can also personalize your profile's ReadMe file with an
+  introduction for people who will visit your page. This is again
+  optional but helps you get noticed. If you want to see some super cool
+  examples, beef up your profile with certain tools, or do some late
+  night reading on how to make your profile stand out, look at this
+  \href{https://github.com/abhisheknaiidu/awesome-github-profile-readme}{repository}!
+\item
+  Make sure you have a ReadMe file for every repository. This serves as
+  an executive summary for your project and saves viewers time on
+  figuring out what the purpose of your project is.
+\item
+  When you make a commit, make sure you are descriptive, especially if
+  you are working on a team. You can use git to search your commit
+  messages so you'll want to be descriptive! Google `git commit best
+  practices' and you can look through all the suggestions on how to do
+  this.
+\item
+  Branch this markdown file and add your own tips!
+\end{enumerate}
+
+\& that's it!
+
+\end{document}
