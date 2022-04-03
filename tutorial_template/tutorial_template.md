@@ -1,7 +1,7 @@
 Tutorial Title
 ================
 Author
-2022-01-24
+2022-04-03
 
 This is a template for tutorials, which are instructive documents that
 guide a learner through a skill using examples.
@@ -54,7 +54,7 @@ information.
 This section is titled **Editing this template** and the sub-section is
 titled **Section titles**, but your tutorial won’t necessarily need
 these sections. Consider the sections that you want in your tutorial and
-revise the headers throughout (the text that starts with \#\#) or create
+revise the headers throughout (the text that starts with \##) or create
 your own section headers.
 
 ## Examples
@@ -215,13 +215,13 @@ Session information
 
 ``` r
 sessionInfo()
-#> R version 4.1.1 (2021-08-10)
-#> Platform: x86_64-apple-darwin17.0 (64-bit)
-#> Running under: macOS Big Sur 10.16
+#> R version 4.1.3 (2022-03-10)
+#> Platform: aarch64-apple-darwin20 (64-bit)
+#> Running under: macOS Monterey 12.0.1
 #> 
 #> Matrix products: default
-#> BLAS:   /Library/Frameworks/R.framework/Versions/4.1/Resources/lib/libRblas.0.dylib
-#> LAPACK: /Library/Frameworks/R.framework/Versions/4.1/Resources/lib/libRlapack.dylib
+#> BLAS:   /Library/Frameworks/R.framework/Versions/4.1-arm64/Resources/lib/libRblas.0.dylib
+#> LAPACK: /Library/Frameworks/R.framework/Versions/4.1-arm64/Resources/lib/libRlapack.dylib
 #> 
 #> locale:
 #> [1] en_US.UTF-8/en_US.UTF-8/en_US.UTF-8/C/en_US.UTF-8/en_US.UTF-8
@@ -230,27 +230,27 @@ sessionInfo()
 #> [1] stats     graphics  grDevices utils     datasets  methods   base     
 #> 
 #> other attached packages:
-#> [1] ggplot2_3.3.5        dplyr_1.0.7          palmerpenguins_0.1.0
+#> [1] ggplot2_3.3.5        dplyr_1.0.8          palmerpenguins_0.1.0
 #> 
 #> loaded via a namespace (and not attached):
-#>  [1] highr_0.9        pillar_1.6.4     compiler_4.1.1   tools_4.1.1     
-#>  [5] digest_0.6.29    evaluate_0.14    lifecycle_1.0.1  tibble_3.1.6    
-#>  [9] gtable_0.3.0     pkgconfig_2.0.3  rlang_0.4.12     cli_3.1.0       
-#> [13] DBI_1.1.1        rstudioapi_0.13  yaml_2.2.1       xfun_0.29       
-#> [17] fastmap_1.1.0    withr_2.4.3      stringr_1.4.0    knitr_1.36      
-#> [21] generics_0.1.1   vctrs_0.3.8      grid_4.1.1       tidyselect_1.1.1
-#> [25] glue_1.5.1       R6_2.5.1         fansi_0.5.0      rmarkdown_2.11  
-#> [29] farver_2.1.0     purrr_0.3.4      magrittr_2.0.1   scales_1.1.1    
-#> [33] ellipsis_0.3.2   htmltools_0.5.2  assertthat_0.2.1 colorspace_2.0-2
+#>  [1] highr_0.9        pillar_1.7.0     compiler_4.1.3   tools_4.1.3     
+#>  [5] digest_0.6.29    evaluate_0.15    lifecycle_1.0.1  tibble_3.1.6    
+#>  [9] gtable_0.3.0     pkgconfig_2.0.3  rlang_1.0.2      cli_3.2.0       
+#> [13] DBI_1.1.2        rstudioapi_0.13  yaml_2.3.5       xfun_0.30       
+#> [17] fastmap_1.1.0    withr_2.5.0      stringr_1.4.0    knitr_1.38      
+#> [21] generics_0.1.2   vctrs_0.3.8      grid_4.1.3       tidyselect_1.1.2
+#> [25] glue_1.6.2       R6_2.5.1         fansi_1.0.3      rmarkdown_2.13  
+#> [29] farver_2.1.0     purrr_0.3.4      magrittr_2.0.2   scales_1.1.1    
+#> [33] ellipsis_0.3.2   htmltools_0.5.2  assertthat_0.2.1 colorspace_2.0-3
 #> [37] labeling_0.4.2   utf8_1.2.2       stringi_1.7.6    munsell_0.5.0   
-#> [41] crayon_1.4.2
+#> [41] crayon_1.5.1
 ```
 
 RStudio version
 
 ``` r
 rstudioapi::versionInfo()$version
-#> [1] '1.4.1717'
+#> [1] '2022.2.1.461'
 ```
 
 ## Sharing your tutorial
@@ -263,7 +263,7 @@ slides to go along with it.
 See the [R-Ladies Gainesville presentations
 repository](https://github.com/R-Ladies-Gainesville/presentations) to
 download the the R Markdown file `tutorial_template.Rmd`. The
-tutorial\_template presentation is created with the
+tutorial_template presentation is created with the
 [xaringan](https://slides.yihui.org/xaringan/#1) package and the RLadies
 theme by [Alison
 Hill](https://www.apreshill.com/project/rladies-xaringan/).
