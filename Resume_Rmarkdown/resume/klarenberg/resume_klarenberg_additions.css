@@ -1,0 +1,56 @@
+/* Change font type */
+body{
+  width: var(--content-width);
+  font-family: "Avenir", sans-serif;
+  font-weight: 300;
+  line-height: 1.3;
+  color: #444;
+  hyphens: auto;
+}
+
+/* Regular capitalization of headers */
+h1, h2 {
+  text-transform: capitalize;
+}
+
+/* Change url link color */
+a {
+        color: #008B8B;
+}
+
+/* Change size of disclaimer */
+#disclaimer{
+  position: absolute;
+  bottom: 0;
+  right: var(--sidebar-horizontal-padding);
+  font-size: 0.55rem;
+  font-style: italic;
+  line-height: 1.0;
+  text-align: right;
+  color: #777;
+}
+
+#main h2{
+  position: relative;
+  top: var(--row-blocks-padding-top);
+  /* XXX: 0.5px for aligning fx printing */
+  left: calc((var(--date-block-width) + var(--decorator-horizontal-margin)));
+  font-weight: 400;
+  font-size: 1.1rem;
+  color: #8B008B;
+}
+
+/* change margins */
+@page{
+  size: letter portrait;
+  margin: 0.5in 0.5in 0.5in 0.25in;
+}
+
+/* Move sidebar up, now starts more or less at the line after the title */
+.aside .level2{
+  margin-top: 0;
+}
+
+h1 {
+text-align: center;
+}

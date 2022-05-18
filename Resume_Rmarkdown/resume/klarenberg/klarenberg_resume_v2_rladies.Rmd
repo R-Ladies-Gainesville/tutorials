@@ -1,0 +1,234 @@
+---
+title: "Résumé" #This is not being used anywhere
+author: "Geraldine Klarenberg" # Goes on top
+date: "`r Sys.Date()`" # Is used at the bottom right
+output:
+  pagedown::html_resume:
+    # set it to true for a self-contained HTML page but it'll take longer to render
+    self_contained: false
+    css: 
+    - "resume_klarenberg_additions.css"
+    - resume
+    - https://cdn.rawgit.com/jpswalsh/academicons/master/css/academicons.min.css
+# uncomment this line to produce HTML and PDF in RStudio:
+knit: pagedown::chrome_print
+
+---
+```{r setup, include=FALSE}
+# this codeblock is supposed to let you use fontawesome5 (register to
+# get the js link). But not working. fontawesome website says to remove
+# other versions or other flavors of fontawesome?
+#Create myheader.html
+# fileConn <- file("myheader.html")
+# writeLines('<script src="https://kit.fontawesome.com/c5710c4819.js" crossorigin="anonymous"></script>', fileConn)
+# close(fileConn)
+# fontawesome4 icons are here: https://fontawesome.com/v4/icons/
+```
+
+```{css, echo=FALSE}
+# This code block makes sure the grey/colored sidebar is only on the first page
+# does not work (yet)
+.pagedjs_page:not(:first-of-type) {
+  --sidebar-width: 0rem;
+  --sidebar-background-color: #ffffff;
+  --main-width: calc(var(--content-width) - var(--sidebar-width));
+  --decorator-horizontal-margin: 0.2in;
+}
+```
+
+Aside
+================================================================================
+
+Contact {#contact}
+--------------------------------------------------------------------------------
+
+- <i class="fa fa-envelope fa-lg"></i> gklarenberg@gmail.com
+- <i class="fa fa-phone fa-lg"></i> +1 386-517-3952
+- <i class="fa fa-home fa-lg"></i> Gainesville, Florida (USA)
+- <i class="fa fa-globe fa-lg"></i> [www.geraldineklarenberg.com](http://www.geraldineklarenberg.com)
+- <i class="fa fa-linkedin-square fa-lg"></i> [geraldine-klarenberg-a8842511/](http://www.linkedin.com/geraldine-klarenberg-a8842511/)
+- <i class="fa fa-twitter fa-lg"></i> @DinaKla
+- <i class="fa fa-github fa-lg"></i> [gklarenberg](http://github.com/gklarenberg)
+
+<!-- - <i class="fa fa-gitlab fa-lg"></i>  [gklarenberg](http://gitlab.com/gklarenberg)
+- <i class="ai ai-google-scholar"></i> [Geraldine Klarenberg](https://scholar.google.com/citations?user=ZV5nyVQAAAAJ&hl=en) 
+- <i class="ai ai-orcid"></i> ORCiD: [0000-0001-7490-1571](https://orcid.org/0000-0001-7490-1571)
+- <i class="ai ai-osf"></i> [Geraldine Klarenberg](osf.io/4puqk)  
+- <i class="ai ai-figshare"></i> [Geraldine Klarenberg](https://figshare.com/authors/Geraldine_Klarenberg/3624188) -->
+
+
+Skills {#skills}
+--------------------------------------------------------------------------------
+
+- **Data cleaning and data wrangling**
+- **Exploratory data analysis** incl cluster analysis and dimensionality reduction
+- **Data visualization**
+- **Descriptive statistics**
+- **Inferential statistics** incl multivariate regression and mixed effect models
+- **Time series analysis** incl non-linear time series analysis
+- **Simulation (process) modeling** incl matrix models, individual based models
+- **Uncertainty and sensitivity analysis**
+- **Supervised machine learning** classification: random forest, logistic regression
+- **Survey analysis**
+
+Tool box {#skills}
+--------------------------------------------------------------------------------
+
+- R programming language - including Rmarkdown, Shiny 
+- Python
+- git, GitHub, GitLab
+- super computer (SLURM)
+- Unix
+- html and CSS
+
+Disclaimer {#disclaimer}
+--------------------------------------------------------------------------------
+
+This resume was made with the R package [**pagedown**](https://github.com/rstudio/pagedown).
+
+Last updated on `r Sys.Date()`.
+
+
+
+Main
+================================================================================
+
+Geraldine Klarenberg {#title}
+--------------------------------------------------------------------------------
+
+Quantitative Data Scientist. I am passionate about data (any data!); finding it, making it usable, explore it, visualize it and analyze it. I have worked on a variety of data sets; spatial, satellite/remote sensing, survey, environmental, health-related. I am experienced in data wrangling, data visualization, statistical analysis, statistical learning models, and optimization methods.
+
+Professional Experience {data-icon=suitcase}
+--------------------------------------------------------------------------------
+
+### Lecturer Quantitative Data Science (faculty)
+
+University of Florida
+
+Gainesville, Florida (USA)
+
+current - 2019
+
+- Teach undergraduate and graduate classes on programming, coding, open science and open data, data wrangling, simulation, data visualization
+- Conduct workshops on similar topics for faculty and staff
+- Provide consulting services to students, staff and faculty on programming and statistics
+
+### Post-doctoral researcher
+
+University of Florida
+
+Gainesville, Florida (USA)
+
+2019 - 2018
+
+- Tick abundance model
+
+### Biological Scientist II
+
+University of Florida
+
+Gainesville, Florida (USA)
+
+2017 - 2016
+
+- Bonefish model
+  
+### Statistician
+
+Suwannee River Water Management District
+
+Live Oak, Florida (USA)
+
+2016 - 2015
+
+- stats
+
+### Program manager / Policy Specialist
+
+The Mvula Trust
+
+Johannesburg, South Africa
+
+2011 - 2005
+
+stats and all kind of other stuff
+
+models
+
+Education {data-icon=graduation-cap}
+--------------------------------------------------------------------------------
+
+### University of Florida
+
+PhD 
+
+Gainesville, Florida, USA
+
+2017
+
+Agricultural and Biological Engineering with a certificate in Biological Systems Modeling
+
+### Wageningen University
+
+BSc and MSc
+
+Wageningen, The Netherlands
+
+2004
+
+International Land and Water Management (hydrology and irrigation) with a 'minor' in Law and Governance
+
+Teaching {data-icon=chalkboard-teacher}
+--------------------------------------------------------------------------------
+
+### Introduction to Programming with R
+
+Online, asynchronous course (graduate+undergraduate)
+
+Gainesville, Florida (USA)
+
+Summer
+
+More text to see what happens
+
+### Can Big Data Save the Earth?
+
+In-person (undergraduate), Python
+
+Gainesville, Florida (USA)
+
+Spring
+
+And even more text!!
+
+### Visualization of Ecological Data
+
+Hybrid (graduate), R programming language
+
+Gainesville, Florida (USA)
+
+Spring
+
+### Simulation Analysis of Forest Ecosystems
+
+In-person, Python
+
+Gainesville, Florida (USA)
+
+Spring
+
+### Research Planning
+
+In-person (graduate)
+
+Gainesville, Florida (USA)
+
+Fall
+
+### Data Wrangling and Reproducible Research
+
+Hybrid (graduate)
+
+Gainesville, Florida (USA)
+
+Spring or Fall
