@@ -37,3 +37,9 @@ vignettes/*.pdf
 
 # R Environment Variables
 .Renviron
+
+# temporary files created by Microsoft programs
+~$*
+
+# temporary files created on Mac computers
+.DS_Store
